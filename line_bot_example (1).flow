@@ -1,0 +1,446 @@
+{
+    "connections": [
+        {
+            "in_id": "{a18e092b-045e-4d5a-bb61-f46bbd452c30}",
+            "in_index": 1,
+            "out_id": "{9c438da5-ce1e-4748-9a2b-33a2cf14d411}",
+            "out_index": 0
+        },
+        {
+            "in_id": "{410093df-5fd0-44a8-9134-8dd38f8efd86}",
+            "in_index": 0,
+            "out_id": "{406e53f6-2a0f-4f98-bb4e-fc39e4a02889}",
+            "out_index": 0
+        },
+        {
+            "in_id": "{d24fe91d-9ae4-4974-808c-b0152b228dbc}",
+            "in_index": 0,
+            "out_id": "{406e53f6-2a0f-4f98-bb4e-fc39e4a02889}",
+            "out_index": 0
+        },
+        {
+            "in_id": "{64a1774d-df5c-42a3-8c1e-df07ff9a6812}",
+            "in_index": 0,
+            "out_id": "{410093df-5fd0-44a8-9134-8dd38f8efd86}",
+            "out_index": 0
+        },
+        {
+            "in_id": "{35887469-5e87-4d72-829b-bd74544f9597}",
+            "in_index": 0,
+            "out_id": "{64a1774d-df5c-42a3-8c1e-df07ff9a6812}",
+            "out_index": 0
+        },
+        {
+            "in_id": "{a18e092b-045e-4d5a-bb61-f46bbd452c30}",
+            "in_index": 0,
+            "out_id": "{35887469-5e87-4d72-829b-bd74544f9597}",
+            "out_index": 0
+        },
+        {
+            "in_id": "{9c741e3c-47b5-40a8-8005-3b9bc6131d6c}",
+            "in_index": 0,
+            "out_id": "{410093df-5fd0-44a8-9134-8dd38f8efd86}",
+            "out_index": 1
+        },
+        {
+            "in_id": "{cfa1e4c8-b392-4681-8e09-34daf90bd8e3}",
+            "in_index": 0,
+            "out_id": "{9c741e3c-47b5-40a8-8005-3b9bc6131d6c}",
+            "out_index": 0
+        },
+        {
+            "in_id": "{9c438da5-ce1e-4748-9a2b-33a2cf14d411}",
+            "in_index": 0,
+            "out_id": "{9c741e3c-47b5-40a8-8005-3b9bc6131d6c}",
+            "out_index": 0
+        },
+        {
+            "in_id": "{9c438da5-ce1e-4748-9a2b-33a2cf14d411}",
+            "in_index": 1,
+            "out_id": "{9c741e3c-47b5-40a8-8005-3b9bc6131d6c}",
+            "out_index": 1
+        },
+        {
+            "in_id": "{3d1c93cc-bf13-4cb7-8666-0127d9185637}",
+            "in_index": 0,
+            "out_id": "{a18e092b-045e-4d5a-bb61-f46bbd452c30}",
+            "out_index": 0
+        },
+        {
+            "in_id": "{26a2e5ca-ca95-43eb-a622-4e20d3b21157}",
+            "in_index": 0,
+            "out_id": "{35887469-5e87-4d72-829b-bd74544f9597}",
+            "out_index": 0
+        },
+        {
+            "in_id": "{2ec2ca66-0eed-4d0d-a7da-02af8fb4991a}",
+            "in_index": 0,
+            "out_id": "{88179e2e-0480-4130-b575-bddb9bb44fca}",
+            "out_index": 0
+        }
+    ],
+    "nodes": [
+        {
+            "id": "{9c741e3c-47b5-40a8-8005-3b9bc6131d6c}",
+            "model": {
+                "data": {
+                    "height": 359,
+                    "js_code": "cmds = \"lamp on, lamp off\"\nmsg = payload.RosServer.msg\npayload.cmd = msg\n\nif(cmds.indexOf(msg) >=0) {\n     ifelse = true\n     payload.line_msg = msg + \" - OK\"\n} else {\n      ifelse = false\n     payload.line_msg = \"Unknow command ?\"\n}",
+                    "widget_state": {
+                        "auto_indent": true,
+                        "auto_parent": true,
+                        "size": 11,
+                        "splt0": 282,
+                        "splt1": 70,
+                        "style": "Default",
+                        "widget_st_w": 0,
+                        "word_wrap": false
+                    },
+                    "width": 394
+                },
+                "name": "IfElse",
+                "node_enable": true
+            },
+            "ngo": {
+                "comment": {
+                    "data": "check cmd list",
+                    "show": true
+                }
+            },
+            "position": {
+                "x": 397.49999999999994,
+                "y": 452.1
+            }
+        },
+        {
+            "id": "{2ec2ca66-0eed-4d0d-a7da-02af8fb4991a}",
+            "model": {
+                "data": {
+                    "line_msg_secret": "",
+                    "line_msg_token": "",
+                    "ngrok_auth_token": "",
+                    "ngrok_local_port": 3000,
+                    "ros_service_name": "line",
+                    "working_dir": "C:/Users/cira/line_bot"
+                },
+                "height": 52,
+                "name": "LineBot",
+                "node_enable": true,
+                "width": 75
+            },
+            "ngo": {
+                "comment": {
+                    "data": "",
+                    "show": false
+                }
+            },
+            "position": {
+                "x": 138.2529676934637,
+                "y": 225.90527286387533
+            }
+        },
+        {
+            "id": "{406e53f6-2a0f-4f98-bb4e-fc39e4a02889}",
+            "model": {
+                "data": {
+                    "resp_timeout": 10000,
+                    "service_name": "line"
+                },
+                "name": "RosServer",
+                "node_enable": true
+            },
+            "ngo": {
+                "comment": {
+                    "data": "",
+                    "show": false
+                }
+            },
+            "position": {
+                "x": 109,
+                "y": 388
+            }
+        },
+        {
+            "id": "{3d1c93cc-bf13-4cb7-8666-0127d9185637}",
+            "model": {
+                "data": {
+                    "jpg": true,
+                    "png": false,
+                    "send_img": true
+                },
+                "name": "RosResponse",
+                "node_enable": true
+            },
+            "ngo": {
+                "comment": {
+                    "data": "",
+                    "show": false
+                }
+            },
+            "position": {
+                "x": 812.4000000000001,
+                "y": 365.69999999999993
+            }
+        },
+        {
+            "id": "{64a1774d-df5c-42a3-8c1e-df07ff9a6812}",
+            "model": {
+                "data": {
+                    "curr_tap": 1,
+                    "draw_roi": true,
+                    "enable_tracking": false,
+                    "font_scale": 2,
+                    "font_thickness": 3,
+                    "frame_buffer": 5,
+                    "map_det_cfgs": [
+                    ],
+                    "max_dist": 150,
+                    "nms": 0.4,
+                    "rect_thickness": 5,
+                    "result_drawing": true,
+                    "roi_h": 5000,
+                    "roi_w": 5000,
+                    "roi_x": 0,
+                    "roi_y": 0,
+                    "show_confidence": true,
+                    "text_drawing": true,
+                    "this_config_name": "",
+                    "thresh": 50,
+                    "txt_offset": 10
+                },
+                "name": "DeepDetect ",
+                "node_enable": true
+            },
+            "ngo": {
+                "comment": {
+                    "data": "AI Detect",
+                    "show": true
+                }
+            },
+            "position": {
+                "x": 399.09999999999997,
+                "y": 283.7
+            }
+        },
+        {
+            "id": "{410093df-5fd0-44a8-9134-8dd38f8efd86}",
+            "model": {
+                "data": {
+                    "height": 325,
+                    "js_code": "ifelse = payload.RosServer.have_image",
+                    "widget_state": {
+                        "auto_indent": true,
+                        "auto_parent": true,
+                        "size": 12,
+                        "splt0": 254,
+                        "splt1": 64,
+                        "style": "Default",
+                        "widget_st_w": 0,
+                        "word_wrap": false
+                    },
+                    "width": 371
+                },
+                "name": "IfElse",
+                "node_enable": true
+            },
+            "ngo": {
+                "comment": {
+                    "data": "have image ?",
+                    "show": true
+                }
+            },
+            "position": {
+                "x": 241,
+                "y": 387
+            }
+        },
+        {
+            "id": "{d24fe91d-9ae4-4974-808c-b0152b228dbc}",
+            "model": {
+                "height": 234,
+                "name": "Debug",
+                "output_h": 0,
+                "output_v": 0,
+                "page_index": 2,
+                "payload_h": 0,
+                "payload_v": 0,
+                "width": 285
+            },
+            "ngo": {
+                "comment": {
+                    "data": "",
+                    "show": false
+                }
+            },
+            "position": {
+                "x": 13.199999999999989,
+                "y": 507.10000000000014
+            }
+        },
+        {
+            "id": "{35887469-5e87-4d72-829b-bd74544f9597}",
+            "model": {
+                "data": {
+                    "height": 353,
+                    "js_code": "payload.line_msg = payload.DeepDetect.obj_count_str",
+                    "widget_state": {
+                        "auto_indent": true,
+                        "auto_parent": true,
+                        "size": 11,
+                        "splt0": 277,
+                        "splt1": 69,
+                        "style": "Default",
+                        "widget_st_w": 0,
+                        "word_wrap": false
+                    },
+                    "width": 373
+                },
+                "name": "JavaScript",
+                "node_enable": true
+            },
+            "ngo": {
+                "comment": {
+                    "data": "set massage\nobjects count",
+                    "show": true
+                }
+            },
+            "position": {
+                "x": 544,
+                "y": 284
+            }
+        },
+        {
+            "id": "{cfa1e4c8-b392-4681-8e09-34daf90bd8e3}",
+            "model": {
+                "flow_data_name": "lamp",
+                "name": "FlowDataSet"
+            },
+            "ngo": {
+                "comment": {
+                    "data": "",
+                    "show": false
+                }
+            },
+            "position": {
+                "x": 506.19999999999993,
+                "y": 414.4000000000001
+            }
+        },
+        {
+            "id": "{c42a11de-9ef1-482f-b188-49f4185347b4}",
+            "model": {
+                "data": {
+                    "bold": true,
+                    "flow_data": "lamp",
+                    "font": "Ubuntu",
+                    "height": 307,
+                    "js_code": "led = \"gray\"\n\nif(payload.cmd == \"lamp on\") {\n     led = \"yellow\"\n} else if(payload.cmd == \"lamp off\") {\n     led = \"gray\"\n}",
+                    "led": "gray",
+                    "size": 18,
+                    "tab_index": 1,
+                    "text": "Lamp",
+                    "widget_state": {
+                        "auto_indent": true,
+                        "auto_parent": true,
+                        "size": 11,
+                        "splt0": 216,
+                        "splt1": 54,
+                        "style": "Default",
+                        "widget_st_w": 0,
+                        "word_wrap": false
+                    },
+                    "width": 301
+                },
+                "height": 153,
+                "name": "LED",
+                "width": 120
+            },
+            "ngo": {
+                "comment": {
+                    "data": "",
+                    "show": false
+                }
+            },
+            "position": {
+                "x": 767.5999999999999,
+                "y": 473.7
+            }
+        },
+        {
+            "id": "{9c438da5-ce1e-4748-9a2b-33a2cf14d411}",
+            "model": {
+                "name": "PipeConnection"
+            },
+            "ngo": {
+                "comment": {
+                    "data": "",
+                    "show": false
+                }
+            },
+            "position": {
+                "x": 630.2999999999997,
+                "y": 467.9000000000001
+            }
+        },
+        {
+            "id": "{a18e092b-045e-4d5a-bb61-f46bbd452c30}",
+            "model": {
+                "name": "PipeConnection"
+            },
+            "ngo": {
+                "comment": {
+                    "data": "",
+                    "show": false
+                }
+            },
+            "position": {
+                "x": 737,
+                "y": 383
+            }
+        },
+        {
+            "id": "{26a2e5ca-ca95-43eb-a622-4e20d3b21157}",
+            "model": {
+                "height": 205,
+                "name": "Debug",
+                "output_h": 0,
+                "output_v": 0,
+                "page_index": 2,
+                "payload_h": 0,
+                "payload_v": 0,
+                "width": 244
+            },
+            "ngo": {
+                "comment": {
+                    "data": "",
+                    "show": false
+                }
+            },
+            "position": {
+                "x": 725.1000000000003,
+                "y": 109.00000000000011
+            }
+        },
+        {
+            "id": "{88179e2e-0480-4130-b575-bddb9bb44fca}",
+            "model": {
+                "name": "ButtonRun"
+            },
+            "ngo": {
+                "comment": {
+                    "data": "",
+                    "show": false
+                }
+            },
+            "position": {
+                "x": 16.500000000000007,
+                "y": 225.50000000000006
+            }
+        }
+    ],
+    "scene_data": {
+        "flow_view_pos_x": 528.1000000000003,
+        "flow_view_pos_y": 397.39999999999975,
+        "flow_view_zoom_factor": 0.9090909090909091
+    }
+}
